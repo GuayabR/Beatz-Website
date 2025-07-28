@@ -1,0 +1,19 @@
+* {
+    font-family: "Quicksand", sans-serif;
+}
+
+body {
+    align-content: center;
+    text-align: center;
+    color: white;
+    background-image: url("Assets/defaultBG.png");
+    backdrop-filter: grayscale(50%) brightness(90%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
+#titleimg {
+    filter: grayscale() brightness(30%) blur(4px);
+    width: 720px;
+}
