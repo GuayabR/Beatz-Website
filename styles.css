@@ -14,6 +14,13 @@ body {
 }
 
 #titleimg {
-    filter: grayscale() brightness(30%) blur(4px);
-    width: 720px;
+	filter: grayscale() brightness(30%) blur(4px);
+	width: 720px;
+}
+
+@media (max-width: 740px) {
+	#titleimg {
+		width: 100%;
+		max-width: 720px;
+	}
 }
