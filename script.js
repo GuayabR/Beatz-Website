@@ -26,4 +26,31 @@ window.addEventListener("DOMContentLoaded", () => {
     if (song) {
         song.volume = 0.07; // 30%
     }
+
+    document.getElementById("download_btn").textContent = "Download for " + detectDeviceType() + "!";
 });
+
+function detectDeviceType() {
+    const userAgent = navigator.userAgent || window.opera;
+
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        return "iOS";
+    }
+
+    if (/android/i.test(userAgent)) {
+        return "Android";
+    }
+
+    if (/CrOS/.test(userAgent)) {
+        return "Chromebook";
+    }
+
+    if (/Mobile|iP(hone|od)|IEMobile|Windows Phone|kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(userAgent)) {
+        return "Mobile";
+    }
+    return "Windows";
+}
+
+function home() {
+    window.location.href = "/";
+}
