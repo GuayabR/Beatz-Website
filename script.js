@@ -28,6 +28,10 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     document.getElementById("download_btn").textContent = "Download for " + detectDeviceType() + "!";
+
+    if (detectDeviceType() == "Chromebook") {
+        document.body.classList.add("chromebook");
+    }
 });
 
 function detectDeviceType() {

@@ -27,6 +27,14 @@ body {
     overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
+.chromebook {
+	font-size: calc(100% - 3px);
+}
+
+.chromebook .logo-img {
+	width: 120px; /* 180 - 60 */
+}
+
 button {
     transition: all 0.5s;
     backdrop-filter: grayscale();
