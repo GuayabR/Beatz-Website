@@ -27,9 +27,14 @@ window.addEventListener("DOMContentLoaded", () => {
         song.volume = 0.07; // 30%
     }
 
-    document.getElementById("download_btn").textContent = "Download for " + detectDeviceType() + "!";
+    var btn = document.getElementById("download_btn")
+    if (btn) btn.textContent = "Download for " + detectDeviceType() + "!";
 
-    if (detectDeviceType() == "Chromebook") {
+    var device = detectDeviceType()
+
+    console.log(device);
+
+    if (device == "Chromebook") {
         document.body.classList.add("chromebook");
     }
 });

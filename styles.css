@@ -28,11 +28,19 @@ body {
 }
 
 .chromebook {
-	font-size: calc(100% - 3px);
+	font-size: 90%;
 }
 
 .chromebook .logo-img {
-	width: 120px; /* 180 - 60 */
+	width: 150px;
+}
+
+.chromebook #gr_logo {
+    width: 68px
+}
+
+.chromebook #titleimg {
+    width: 600px
 }
 
 button {
