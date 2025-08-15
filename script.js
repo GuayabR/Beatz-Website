@@ -1,21 +1,27 @@
-const targetDate = new Date("2025-08-16T00:00:00");
+const targetDate = new Date("2025-09-01T00:00:00");
 const countdownEl = document.getElementById("countdown");
 
 function updateCountdown() {
-    const now = new Date();
-    const diff = targetDate - now;
+	const now = new Date();
+	const diff = targetDate - now;
 
-    if (diff <= 0) {
-        countdownEl.textContent = "BEATZ! X RELEASED!";
-        return;
-    }
+	if (diff <= 0) {
+		countdownEl.textContent = "BEATZ! X RELEASED!";
+		return;
+	}
 
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((diff / (1000 * 60)) % 60);
-    const seconds = Math.floor((diff / 1000) % 60);
+	const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+	const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+	const minutes = Math.floor((diff / (1000 * 60)) % 60);
+	const seconds = Math.floor((diff / 1000) % 60);
 
-    countdownEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+	let parts = [];
+	if (days > 0) parts.push(`${days}d`);
+	if (days > 0 || hours > 0) parts.push(`${hours}h`);
+	if (days > 0 || hours > 0 || minutes > 0) parts.push(`${minutes}m`);
+	parts.push(`${seconds}s`);
+
+	countdownEl.textContent = parts.join(" ");
 }
 
 updateCountdown();
