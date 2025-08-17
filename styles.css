@@ -73,7 +73,6 @@ button {
 button:not(:disabled):hover {
     transition: all 0.5s;
     padding: 12px;
-    font-size: 90%;
     font-weight: 800;
     background-color: rgba(0, 209, 17, 0.137);
 }
@@ -81,7 +80,6 @@ button:not(:disabled):hover {
 button:not(:disabled):active {
     transition: all 0.1s ease-out;
     padding: 12px;
-    font-size: 105%;
     font-weight: 1200;
     background-color: rgba(17, 209, 0, 0.308);
 }
