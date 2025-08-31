@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>COMING SOON.</title>
+        <title>Beatz! X</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet" />
@@ -11,31 +11,30 @@
         <link rel="icon" type="image/png" href="Assets/favicon.png" />
     </head>
     <body>
-        <audio id="bgsong" src="Assets/Slow Down.mp3" autoplay loop></audio>
-
         <div class="content">
-            <h1 class="fade-in fade-delay-1">HOW MUCH LONGER NOW?</h1>
+            <h1 class="fade-in fade-delay-1">Beatz! X</h1>
             <h3 class="fade-in fade-delay-2">THANK YOU.</h3>
             <h3 class="fade-in fade-delay-3">FOR VISITING.</h3>
-            <br>
-            <p class="fade-in fade-delay-4" style="color: rgba(105, 170, 255, 0.103);">SORRY. FOR THE DELAY.</p>
             <img id="titleimg" class="fade-in fade-delay-4" src="Assets/BeatzTitle.png" alt="Beatz Title" />
         </div>
 
-        <p class="fade-in fade-delay-5" id="countdown">?</p>
-        <footer class="fade-in fade-delay-6">09/01/2025</footer>
+        <br></br>
 
-        <p id="songdetails" class="fade-in fade-delay-6">"Slow Down" by Creo.</p>
-        <a
-            id="songlink"
-            class="fade-in fade-delay-6"
-            href="https://open.spotify.com/track/3McDEIMFeXy8mTtJsKm85X?si=a1e847e280604ca8"
-            target="_blank"
-            rel="noopener noreferrer">
-            Listen on Spotify
-        </a>
+        <button class="fade-in fade-delay-4" id="go-to-down" onclick="document.location.href = '/download'">DOWNLOAD!</button>
 
         <br></br>
+
+        <button class="fade-in fade-delay-4" id="go-to-browser"
+            onclick="
+                window.open(
+                    'https://browser.beatzx.com', // Page to open
+                    '_blank', // Target (_blank = new window/tab)
+                    'width=1420,height=900,resizable=yes,scrollbars=yes'
+                );
+            ">
+            Play the Browser Port!
+        </button>
+
 
         <div class="logo-section fade-in fade-delay-6">
             <div class="logo-block">
@@ -53,8 +52,8 @@
                     src="Assets/gr_logo_big.png"
                     alt="GuayabR Logo"
                     id="gr_logo"
-                    title="My Website (https://guayabr.com)"
-                    onclick="window.location.href = 'https://guayabr.com'"
+                    title="Instagram (https://instagram.com/imguayabr)"
+                    onclick="window.location.href = 'https://instagram.com/imguayabr'"
                     class="logo-img" />
             </div>
         </div>

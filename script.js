@@ -1,46 +1,15 @@
-const targetDate = new Date("2025-09-01T00:00:00");
-const countdownEl = document.getElementById("countdown");
+// Beatz! X Website
+// C 2025 GuayabR. All Rights Reserved.
 
-function updateCountdown() {
-	const now = new Date();
-	const diff = targetDate - now;
-
-	if (diff <= 0) {
-		countdownEl.textContent = "BEATZ! X RELEASED!";
-		return;
-	}
-
-	const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-	const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-	const minutes = Math.floor((diff / (1000 * 60)) % 60);
-	const seconds = Math.floor((diff / 1000) % 60);
-
-	let parts = [];
-	if (days > 0) parts.push(`${days}d`);
-	if (days > 0 || hours > 0) parts.push(`${hours}h`);
-	if (days > 0 || hours > 0 || minutes > 0) parts.push(`${minutes}m`);
-	parts.push(`${seconds}s`);
-
-	countdownEl.textContent = parts.join(" ");
-}
-
-updateCountdown();
-setInterval(updateCountdown, 1000);
+const DEVICE = detectDeviceType();
 
 window.addEventListener("DOMContentLoaded", () => {
-    const song = document.getElementById("bgsong");
-    if (song) {
-        song.volume = 0.07; // 30%
-    }
+    //var btn = document.getElementById("download_btn");
+    //if (btn) btn.textContent = "Download for " + detectDeviceType() + "!";
 
-    var btn = document.getElementById("download_btn")
-    if (btn) btn.textContent = "Download for " + detectDeviceType() + "!";
+    console.log(DEVICE);
 
-    var device = detectDeviceType()
-
-    console.log(device);
-
-    if (device == "Chromebook") {
+    if (DEVICE == "Chromebook") {
         document.body.classList.add("chromebook");
     }
 });
@@ -68,4 +37,26 @@ function detectDeviceType() {
 
 function home() {
     window.location.href = "/";
+}
+
+function download() {
+    // Replace with your GitHub repo, release tag, and asset name
+    const githubUrl = "https://github.com/GuayabR/Beatz-X/releases/download/v1.0/BeatzX-1.0.zip";
+
+    fetch(githubUrl)
+        .then((response) => {
+            if (!response.ok) throw new Error("Network response was not ok");
+            return response.blob();
+        })
+        .then((blob) => {
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "Beatz! X 1.0.0.zip"; // downloaded file name
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            window.URL.revokeObjectURL(url);
+        })
+        .catch((err) => console.error("Download failed:", err));
 }
